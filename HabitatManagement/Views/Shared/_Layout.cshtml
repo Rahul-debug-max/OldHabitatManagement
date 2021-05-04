@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewData["Title"] - RSK Business Solutions</title>
+    <style>
+        html {
+            min-height: calc(100vh - 1px) !important;
+        }        
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="~/css/glyphicons.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/glyphicons-basic.css" />
+    <link rel="stylesheet" href="~/css/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="~/lib/jqGrid-4.6.0/css/ui.jqgrid.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/Style.css" />
+    <link href="~/lib/bootstrapDateTimePicker/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+
+    <script src="~/js/common.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/gridToolbarFlexisel.js"></script>
+    <script src="~/lib/jqGrid-4.6.0/js/jquery.jqGrid.js"></script>
+    <script src="~/lib/jqGrid-4.6.0/js/i18n/grid.locale-en.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery-ui-1.11.0.custom.js"></script>
+    <script src="~/lib/moments/moment.min.js"></script>
+    <script src="~/lib/moments/moment-with-locales.js"></script>
+    <script src="~/lib/bootstrapDateTimePicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript">
+          //  moment.locale('en-AU');
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">                
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/rsk-logo.jpg" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav ml-auto home-menu">
+                        <li class="nav-item mx-3">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Form" asp-action="Index">Forms</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container" id="dvbodyContainer">
+        <main role="main" class="pb-3">
+            @RenderBody()
+            @{Html.RenderPartial("_DateTimePicker");}
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container" style="color:white;">
+            &copy; Copyright: 2021 RSK Business Solutions . All rights reserved.
+        </div>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
